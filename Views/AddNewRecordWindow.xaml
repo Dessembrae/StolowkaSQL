@@ -18,13 +18,13 @@
         <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}" />
 
         <TextBlock Grid.Row="1" Text="Grupa: " />
-        <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding grupyList}" DisplayMemberPath="Opis" SelectedItem="{Binding SelectedGroup}" />
+        <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding GroupList}" DisplayMemberPath="Opis" SelectedItem="{Binding SelectedGroup}" />
 
         <TextBlock Grid.Row="2" Text="Pozycja: " />
-        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Pozycja, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Position, UpdateSourceTrigger=PropertyChanged}" />
 
         <TextBlock Grid.Row="3" Text="Nazwa potrawy: " />
-        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Nazwa, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
         
         <Button Grid.Row="4" Grid.Column="0" Content="Dodaj do bazy danych" Grid.ColumnSpan="2" Command="{Binding AddCommand}"/>
     </Grid>

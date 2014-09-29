@@ -80,7 +80,7 @@
     <Compile Include="Commands\ResetRecordsCommand.cs" />
     <Compile Include="Commands\UpdateRecordsCommand.cs" />
     <Compile Include="Models\Food.cs" />
-    <Compile Include="Models\GrupyStructure.cs" />
+    <Compile Include="Models\DishGroupStructure.cs" />
     <Compile Include="ViewModels\AddWindowViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />

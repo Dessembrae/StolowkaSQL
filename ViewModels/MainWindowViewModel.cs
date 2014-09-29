@@ -31,10 +31,10 @@ namespace StolowkaSQL.ViewModels
         AddWindowViewModel addWindowViewModel;
 
         static string connstring = "datasource = datasource;port=port;username=username;password=password";
-        public List<GrupyStructure> grupyList { get; set; }
+        public List<DishGroupStructure> groupList { get; set; }
         public CollectionViewSource viewList { get; set; }
-        public ObservableCollection<Food> foodList { get; set; }
-        public ObservableCollection<Food> foodComparerList { get; set; }
+        public ObservableCollection<Food> foodList = new ObservableCollection<Food>();
+        public ObservableCollection<Food> foodComparerList = new ObservableCollection<Food>();
         MySqlConnection conDataBase = new MySqlConnection(connstring);
         DataTable dbataset;
         int itemPerPage = 15;
@@ -50,6 +50,7 @@ namespace StolowkaSQL.ViewModels
         {
             get { return _currentPageIndex + 1; }
         }
+
         private int _totalPage;
         public int TotalPage
         {
@@ -59,10 +60,7 @@ namespace StolowkaSQL.ViewModels
         #endregion
 
         public MainWindowViewModel()
-        {
-            
-            foodList = new ObservableCollection<Food>();
-            foodComparerList = new ObservableCollection<Food>();
+        {  
             viewList = new CollectionViewSource();
 
             WorkWithDatabase();
@@ -115,7 +113,7 @@ namespace StolowkaSQL.ViewModels
         void view_Filter(object sender, FilterEventArgs e)
         {
             //int index = foodList.IndexOf((Food)e.Item);
-            int index = Int32.Parse(((Food)e.Item).id) - 1;
+            int index = Int32.Parse(((Food)e.Item).Id) - 1;
             if (index >= itemPerPage * CurrentPageIndex && index < itemPerPage * (CurrentPageIndex + 1))
             {
                 e.Accepted = true;
@@ -140,7 +138,7 @@ namespace StolowkaSQL.ViewModels
         public void PopulateComboBox()
         {
             //grupyList
-            grupyList = new List<GrupyStructure>();
+            groupList = new List<DishGroupStructure>();
             MySqlCommand cmdDataBase = new MySqlCommand("SELECT * from baza.danych", conDataBase);
             try
             {
@@ -151,7 +149,7 @@ namespace StolowkaSQL.ViewModels
 
                 foreach (DataRow row in dbataset.Rows)
                 {
-                    grupyList.Add(new GrupyStructure(row["klucz"].ToString(), row["opis"].ToString()));
+                    groupList.Add(new DishGroupStructure(row["klucz"].ToString(), row["opis"].ToString()));
                 }
             }
             catch (Exception)
@@ -199,7 +197,7 @@ namespace StolowkaSQL.ViewModels
                     Food recordToUpdate = foodList.ElementAt(i);
 
                     string query = String.Format("UPDATE baza.danych SET activ={0}, daniednia={1}, nazwa='{2}' WHERE Id='{3}'",
-                        recordToUpdate.active.ToString(), recordToUpdate.danieDnia, recordToUpdate.nazwa, recordToUpdate.id);
+                        recordToUpdate.Active, recordToUpdate.DishOfDay, recordToUpdate.Nazwa, recordToUpdate.Id);
                     MySqlDataAdapter dAdap = new MySqlDataAdapter();
                     dAdap.UpdateCommand = new MySqlCommand(query, conDataBase);
                     conDataBase.Open();
@@ -213,12 +211,12 @@ namespace StolowkaSQL.ViewModels
         {
             foreach (Food danie in foodList)
             {
-                if (danie.active == true || danie.danieDnia == true)
+                if (danie.Active == true || danie.DishOfDay == true)
                 {
-                    danie.active = false;
-                    danie.danieDnia = false;
+                    danie.Active = false;
+                    danie.DishOfDay = false;
                     string query = String.Format("UPDATE baza.danych SET activ={0}, daniednia={1}, nazwa='{2}' WHERE Id='{3}'",
-                        danie.active.ToString(), danie.danieDnia, danie.nazwa, danie.id);
+                        danie.Active, danie.DishOfDay, danie.Nazwa, danie.Id);
                     MySqlDataAdapter dAdap = new MySqlDataAdapter();
                     dAdap.UpdateCommand = new MySqlCommand(query, conDataBase);
                     conDataBase.Open();

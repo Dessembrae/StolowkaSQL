@@ -11,14 +11,14 @@
             <RowDefinition Height="45" />
             <RowDefinition Height="45" />
         </Grid.RowDefinitions>
-        <ListView Name="Dania" ItemsSource="{Binding viewList.View}">
+        <ListView ItemsSource="{Binding ViewList.View}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn  Header="Id" Width="40" DisplayMemberBinding="{Binding id}" />
+                    <GridViewColumn  Header="Id" Width="40" DisplayMemberBinding="{Binding Id}" />
                     <GridViewColumn Header="Nazwa" Width="300">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBox Text="{Binding nazwa}" />
+                                <TextBox Text="{Binding Name}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -26,14 +26,14 @@
                     <GridViewColumn Header="activ" Width="50">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <CheckBox IsChecked="{Binding active, Mode=TwoWay}" />
+                                <CheckBox IsChecked="{Binding Active, Mode=TwoWay}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Header="danie dnia" Width="70">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <CheckBox IsChecked="{Binding danieDnia, Mode=TwoWay}" HorizontalAlignment="Center" />
+                                <CheckBox IsChecked="{Binding DishOfDay, Mode=TwoWay}" HorizontalAlignment="Center" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

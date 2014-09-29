@@ -7,22 +7,22 @@ namespace StolowkaSQL.Models
 {
     public class Food
     {
-        public string id { get; set; }
-        public string nazwa { get; set; }
-        public bool active { get; set; }
-        public bool danieDnia { get; set; }
+        public string Id { get; set; }
+        public string Nazwa { get; set; }
+        public bool Active { get; set; }
+        public bool DishOfDay { get; set; }
 
-        public Food(string id, string nazwa, bool active, bool danieDnia)
+        public Food(string Id, string Nazwa, bool Active, bool DanieDnia)
             {
-                this.id = id;
-                this.nazwa = nazwa;
-                this.active = active;
-                this.danieDnia = danieDnia;
+                this.Id = Id;
+                this.Nazwa = Nazwa;
+                this.Active = Active;
+                this.DishOfDay = DanieDnia;
             }
 
         public override string ToString()
         {
-            return nazwa + " " + active.ToString() + " " + danieDnia.ToString();
+            return Nazwa + " " + Active.ToString() + " " + DishOfDay.ToString();
         }
 
         public override bool Equals(object obj)
@@ -33,7 +33,7 @@ namespace StolowkaSQL.Models
             if (!(obj is Food))
                 return false;
 
-            if (this.nazwa == ((Food)obj).nazwa && this.active == ((Food)obj).active && this.danieDnia == ((Food)obj).danieDnia)
+            if (this.Nazwa == ((Food)obj).Nazwa && this.Active == ((Food)obj).Active && this.DishOfDay == ((Food)obj).DishOfDay)
                 return true;
             else
                 return false;
@@ -41,7 +41,7 @@ namespace StolowkaSQL.Models
 
         public override int GetHashCode()
         {
-            return id.GetHashCode() ^ nazwa.GetHashCode() ^ active.GetHashCode() ^ danieDnia.GetHashCode();
+            return Id.GetHashCode() ^ Nazwa.GetHashCode() ^ Active.GetHashCode() ^ DishOfDay.GetHashCode();
         }
 
         public Food DeepCopy()

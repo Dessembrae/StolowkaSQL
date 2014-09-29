@@ -19,8 +19,8 @@ namespace StolowkaSQL.Commands
         public bool CanExecute(object parameter)
         {
             if (!String.IsNullOrEmpty(viewModel.Id) &&
-                !String.IsNullOrEmpty(viewModel.Pozycja) &&
-                !String.IsNullOrEmpty(viewModel.Nazwa))
+                !String.IsNullOrEmpty(viewModel.Position) &&
+                !String.IsNullOrEmpty(viewModel.Name))
                 return true;
             else
                 return false;
