@@ -1,0 +1,60 @@
+﻿<Window x:Class="StolowkaSQL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Stołówka - Zarządzanie bazą danych" Height="600" Width="530">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="48" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="45" />
+            <RowDefinition Height="45" />
+        </Grid.RowDefinitions>
+        <ListView Name="Dania" ItemsSource="{Binding viewList.View}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn  Header="Id" Width="40" DisplayMemberBinding="{Binding id}" />
+                    <GridViewColumn Header="Nazwa" Width="300">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding nazwa}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <GridViewColumn Header="activ" Width="50">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding active, Mode=TwoWay}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="danie dnia" Width="70">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding danieDnia, Mode=TwoWay}" HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="First" Command="{Binding FirstCommand}"/>
+            <Button Content="Previous" Command="{Binding PreviousCommand}"/>
+            <TextBlock Width="auto" Text="{Binding CurrentPage}"/>
+            <TextBlock Text="of"/>
+            <TextBlock Width="auto" Text="{Binding TotalPage}"/>
+            <Button Content="Next" Command="{Binding NextCommand}"/>
+            <Button Content="Last" Command="{Binding LastCommand}"/>
+        </StackPanel>
+
+        <Button Grid.Row="2" Content="Aktualizuj bazę danych" Command="{Binding UpdateCommand}" />
+        <Button Grid.Row="3" Content="Wyzeruj wszystkie wartosci" Command="{Binding ResetCommand}"/>
+        <Button Grid.Row="4" Content="Dodaj nowy rekord" Command="{Binding AddWindowCommand}" />
+        <Button Grid.Row="5" Content="Wyłącz program" Click="Button_Click" Background="Firebrick" />
+    </Grid>
+</Window>

@@ -1,0 +1,31 @@
+﻿<Window x:Class="StolowkaSQL.Views.AddNewRecordWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Dodaj nowy rekord" Height="240" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Id: " />
+        <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding Id, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Grid.Row="1" Text="Grupa: " />
+        <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding grupyList}" DisplayMemberPath="Opis" SelectedItem="{Binding SelectedGroup}" />
+
+        <TextBlock Grid.Row="2" Text="Pozycja: " />
+        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Pozycja, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Grid.Row="3" Text="Nazwa potrawy: " />
+        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Nazwa, UpdateSourceTrigger=PropertyChanged}" />
+        
+        <Button Grid.Row="4" Grid.Column="0" Content="Dodaj do bazy danych" Grid.ColumnSpan="2" Command="{Binding AddCommand}"/>
+    </Grid>
+</Window>

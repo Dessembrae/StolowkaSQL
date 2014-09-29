@@ -1,0 +1,17 @@
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\bin\Release\StolowkaSQL.exe.config
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\bin\Release\StolowkaSQL.exe
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\bin\Release\StolowkaSQL.pdb
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\obj\Release\StolowkaSQL.csprojResolveAssemblyReference.cache
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\obj\Release\Views\MainWindow.baml
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\obj\Release\Views\MainWindow.g.cs
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\obj\Release\App.g.cs
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\obj\Release\StolowkaSQL_MarkupCompile.cache
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\obj\Release\StolowkaSQL.g.resources
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\obj\Release\StolowkaSQL.Properties.Resources.resources
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\obj\Release\StolowkaSQL.csproj.GenerateResource.Cache
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\obj\Release\StolowkaSQL.exe
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\obj\Release\StolowkaSQL.pdb
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\bin\Release\MySql.Data.dll
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\obj\Release\Views\AddNewRecordWindow.baml
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\obj\Release\App.baml
+C:\Users\Dess\documents\visual studio 2013\Projects\MVVMSolution\StolowkaSQL\obj\Release\Views\AddNewRecordWindow.g.cs
