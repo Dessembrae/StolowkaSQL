@@ -9,11 +9,11 @@ namespace StolowkaSQL.Commands
 {
     class ResetRecordsCommand : ICommand
     {
-        MainWindowViewModel mainWindowViewModel;
+        private MainWindowViewModel viewModel;
 
-        public ResetRecordsCommand(MainWindowViewModel mainWindowViewModel)
+        public ResetRecordsCommand(MainWindowViewModel viewModel)
         {
-            this.mainWindowViewModel = mainWindowViewModel;
+            this.viewModel = viewModel;
         }
 
         public bool CanExecute(object parameter)
@@ -29,7 +29,7 @@ namespace StolowkaSQL.Commands
 
         public void Execute(object parameter)
         {
-            mainWindowViewModel.ResetAllRecords();
+            viewModel.ResetAllRecords();
         }
     }
 }

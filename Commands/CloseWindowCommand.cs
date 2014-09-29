@@ -10,11 +10,11 @@ namespace StolowkaSQL.Commands
 {
     class CloseWindowCommand : ICommand
     {
-        MainWindowViewModel mainWindowViewModel;
+        private MainWindowViewModel viewModel;
 
-        public CloseWindowCommand(MainWindowViewModel mainWindowViewModel)
+        public CloseWindowCommand(MainWindowViewModel viewModel)
         {
-            this.mainWindowViewModel = mainWindowViewModel;
+            this.viewModel = viewModel;
         }
 
         public bool CanExecute(object parameter)
@@ -30,7 +30,6 @@ namespace StolowkaSQL.Commands
 
         public void Execute(object parameter)
         {
-            Console.WriteLine("zamykanie programu....");
             Window window = parameter as Window;
             window.Close();
         }

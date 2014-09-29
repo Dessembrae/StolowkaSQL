@@ -9,16 +9,16 @@ namespace StolowkaSQL.Commands
 {
     class LastPageCommand : ICommand
     {
-        MainWindowViewModel mainWindowViewModel;
+        private MainWindowViewModel viewModel;
 
-        public LastPageCommand(MainWindowViewModel mainWindowViewModel)
+        public LastPageCommand(MainWindowViewModel viewModel)
         {
-            this.mainWindowViewModel = mainWindowViewModel;
+            this.viewModel = viewModel;
         }
 
         public bool CanExecute(object parameter)
         {
-            if (mainWindowViewModel.CurrentPage == mainWindowViewModel.TotalPage)
+            if (viewModel.CurrentPage == viewModel.TotalPage)
                 return false;
             else
                 return true;
@@ -32,7 +32,7 @@ namespace StolowkaSQL.Commands
 
         public void Execute(object parameter)
         {
-            mainWindowViewModel.ShowLastPage();
+            viewModel.ShowLastPage();
         }
     }
 }

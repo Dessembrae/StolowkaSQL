@@ -9,11 +9,11 @@ namespace StolowkaSQL.Commands
 {
     class UpdateRecordsCommand : ICommand
     {
-        MainWindowViewModel mainWindowViewModel;
+        private MainWindowViewModel viewModel;
 
-        public UpdateRecordsCommand(MainWindowViewModel mainWindowViewModel)
+        public UpdateRecordsCommand(MainWindowViewModel viewModel)
         {
-            this.mainWindowViewModel = mainWindowViewModel;
+            this.viewModel = viewModel;
         }
 
         public bool CanExecute(object parameter)
@@ -29,7 +29,7 @@ namespace StolowkaSQL.Commands
 
         public void Execute(object parameter)
         {
-            mainWindowViewModel.UpdateDatabase();
+            viewModel.UpdateDatabase();
         }
     }
 }

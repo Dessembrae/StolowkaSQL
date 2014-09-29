@@ -9,16 +9,16 @@ namespace StolowkaSQL.Commands
 {
     class NextPageCommand : ICommand
     {
-        MainWindowViewModel mainWindowViewModel;
+        private MainWindowViewModel viewModel;
 
-        public NextPageCommand(MainWindowViewModel mainWindowViewModel)
+        public NextPageCommand(MainWindowViewModel viewModel)
         {
-            this.mainWindowViewModel = mainWindowViewModel;
+            this.viewModel = viewModel;
         }
 
         public bool CanExecute(object parameter)
         {
-            if (mainWindowViewModel.TotalPage - 1 > mainWindowViewModel.CurrentPageIndex)
+            if (viewModel.TotalPage - 1 > viewModel.CurrentPageIndex)
                 return true;
             else
                 return false;
@@ -32,7 +32,7 @@ namespace StolowkaSQL.Commands
 
         public void Execute(object parameter)
         {
-            mainWindowViewModel.ShowNextPage();
+            viewModel.ShowNextPage();
         }
     }
 }

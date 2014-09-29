@@ -9,25 +9,21 @@ namespace StolowkaSQL.Commands
 {
     class AddDataCommand : ICommand
     {
-        AddWindowViewModel addWindowViewModel;
+        private AddWindowViewModel viewModel;
 
-        public AddDataCommand(AddWindowViewModel addWindowViewModel)
+        public AddDataCommand(AddWindowViewModel viewModel)
         {
-            this.addWindowViewModel = addWindowViewModel;
+            this.viewModel = viewModel;
         }
 
         public bool CanExecute(object parameter)
         {
-            if (!String.IsNullOrEmpty(addWindowViewModel.Id) &&
-                !String.IsNullOrEmpty(addWindowViewModel.Pozycja) &&
-                !String.IsNullOrEmpty(addWindowViewModel.Nazwa))
-            {
+            if (!String.IsNullOrEmpty(viewModel.Id) &&
+                !String.IsNullOrEmpty(viewModel.Pozycja) &&
+                !String.IsNullOrEmpty(viewModel.Nazwa))
                 return true;
-            }
             else
-            {
                 return false;
-            }
         }
 
         public event EventHandler CanExecuteChanged
@@ -38,7 +34,7 @@ namespace StolowkaSQL.Commands
 
         public void Execute(object parameter)
         {
-            addWindowViewModel.AddToDatabase();
+            viewModel.AddToDatabase();
         }
     }
 }

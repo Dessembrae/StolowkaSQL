@@ -9,11 +9,11 @@ namespace StolowkaSQL.Commands
 {
     class AddNewWindowCommand : ICommand
     {
-        private MainWindowViewModel mainWindowViewModel;
+        private MainWindowViewModel viewModel;
 
-        public AddNewWindowCommand(MainWindowViewModel mainWindowViewModel)
+        public AddNewWindowCommand(MainWindowViewModel viewModel)
         {
-            this.mainWindowViewModel = mainWindowViewModel;
+            this.viewModel = viewModel;
         }
 
         public bool CanExecute(object parameter)
@@ -29,7 +29,7 @@ namespace StolowkaSQL.Commands
 
         public void Execute(object parameter)
         {
-            mainWindowViewModel.ShowAddWindow();
+            viewModel.ShowAddWindow();
         }
     }
 }

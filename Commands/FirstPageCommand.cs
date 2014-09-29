@@ -9,16 +9,16 @@ namespace StolowkaSQL.Commands
 {
     class FirstPageCommand : ICommand
     {
-        MainWindowViewModel mainWindowViewModel;
+        private MainWindowViewModel viewModel;
 
-        public FirstPageCommand(MainWindowViewModel mainWindowViewModel)
+        public FirstPageCommand(MainWindowViewModel viewModel)
         {
-            this.mainWindowViewModel = mainWindowViewModel;
+            this.viewModel = viewModel;
         }
 
         public bool CanExecute(object parameter)
         {
-            if (mainWindowViewModel.CurrentPageIndex == 0)
+            if (viewModel.CurrentPageIndex == 0)
                 return false;
             else
                 return true;
@@ -32,7 +32,7 @@ namespace StolowkaSQL.Commands
 
         public void Execute(object parameter)
         {
-            mainWindowViewModel.ShowFirstPage();
+            viewModel.ShowFirstPage();
         }
     }
 }
